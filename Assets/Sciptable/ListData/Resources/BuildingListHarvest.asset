@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f327092452b6df4fbb0b8b8a2b64cd1, type: 3}
+  m_Name: BuildingListHarvest
+  m_EditorClassIdentifier: 
+  ListBuilding:
+  - {fileID: 11400000, guid: c34f279c830c8194c9de0afc1c7c79f1, type: 2}
+  - {fileID: 11400000, guid: 2ac8604b612f5c54aa9d8668a72e034c, type: 2}
