@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class ResourcesManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Dictionary<ResourcesTypeSO, int> _dicResourcesAmount;
+    private void Awake()
     {
-        
+        _dicResourcesAmount = new Dictionary<ResourcesTypeSO, int>();
+        ResourcesTypeListSO resourcesTypeListSO = Resources.Load<ResourcesTypeListSO>("ItemList");
+        foreach (ResourcesTypeSO item in resourcesTypeListSO.ListResources)
+        {
+            _dicResourcesAmount[item] = 0;
+        }
+        TestResources();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void TestResources()
     {
-        
+        foreach (ResourcesTypeSO item in _dicResourcesAmount.Keys)
+        {
+            Debug.Log(item.NameResources +"_" + _dicResourcesAmount[item]);
+        }
     }
 }

@@ -13,7 +13,7 @@ public class BuildingManager : MonoBehaviour
     private void Start()
     {
         camera = Camera.main;
-        buildingList = Resources.Load<BuildingListSO>(typeof(BuildingListSO).Name);
+        buildingList = Resources.Load<BuildingListSO>("BuildingListHarvest");
         buildingType = buildingList.ListBuilding[0];
     }
 
