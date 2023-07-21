@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Constant : MonoBehaviour
+namespace TD
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Constant : MonoBehaviour
     {
-        
-    }
+        #region Properties
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //resources path
+        public static string BUIDING_HARVEST = "BuildingListHarvest";// list build harvest
+        public static string LIST_ITEM = "ItemList";// list item (currency )
+
+        #endregion
+        #region Unity
+        #endregion
+        #region Method
+        #endregion
     }
 }

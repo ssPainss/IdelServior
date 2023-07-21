@@ -7,4 +7,5 @@ public class BuildingTypeSO :ScriptableObject
 {
     public string NameBuilding;
     public Transform Prefab;
+    public ResourcesGenerateData ResourcesGenerateData;
 }

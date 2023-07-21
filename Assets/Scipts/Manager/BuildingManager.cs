@@ -1,44 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
+using TD;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class BuildingManager : MonoBehaviour
+namespace Manager
 {
-    private BuildingTypeSO buildingType;
-    private BuildingListSO buildingList;
-    private Camera camera; 
-
-
-    private void Start()
+    public class BuildingManager : MonoBehaviour
     {
-        camera = Camera.main;
-        buildingList = Resources.Load<BuildingListSO>("BuildingListHarvest");
-        buildingType = buildingList.ListBuilding[0];
-    }
+        private BuildingTypeSO buildingType;
+        private BuildingListSO buildingList;
+        private Camera camera;
 
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonUp(0))
+        private void Start()
         {
-            Instantiate(buildingType.Prefab, GetMouseWorldPosition(), Quaternion.identity);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
+            camera = Camera.main;
+            buildingList = Resources.Load<BuildingListSO>(Constant.BUIDING_HARVEST);
             buildingType = buildingList.ListBuilding[0];
         }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            buildingType = buildingList.ListBuilding[1];
-        }
-    }
 
-    private Vector3 GetMouseWorldPosition()
-    {
-        Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0;
-        return mousePosition;
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                Instantiate(buildingType.Prefab, GetMouseWorldPosition(), Quaternion.identity);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                buildingType = buildingList.ListBuilding[0];
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                buildingType = buildingList.ListBuilding[1];
+            }
+        }
+
+        private Vector3 GetMouseWorldPosition()
+        {
+            Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+            return mousePosition;
+        }
     }
 }
